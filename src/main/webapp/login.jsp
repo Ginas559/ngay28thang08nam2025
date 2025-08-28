@@ -4,12 +4,19 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Đăng nhập</title> <!-- Sửa title từ "Đăng ký tài khoản" thành "Đăng nhập" để đúng -->
+    <title>Đăng nhập</title> 
 </head>
 <body>
 
+	<h2>Note:</h2>
+	<ul>
+		<li>Admin: trungAdmin - 123: http://localhost:8080/vidu1/home1.jsp</li>
+		<li>Admin: trungManager - 123: http://localhost:8080/vidu1/home2.jsp</li>
+		<li>Admin: trungUser - 123: http://localhost:8080/vidu1/home3.jsp</li>
+	</ul>
+
     <form action="login" method="post">
-        <h2>Đăng nhập</h2> <!-- Sửa h2 từ "Tạo tài khoản mới" thành "Đăng nhập" -->
+        <h2>Đăng nhập</h2> 
 
         <c:if test="${alert != null}">
             <h3 class="alert alert-danger">${alert}</h3>
@@ -30,7 +37,7 @@
             <label class="input login-input">
                 <div class="input-group">
                     <span class="input-group-addon">
-                        <i class="fa fa-lock"></i> <!-- Thêm icon lock cho đẹp -->
+                        <i class="fa fa-lock"></i> 
                     </span>
                     <input type="password" placeholder="Mật khẩu" name="password" class="form-control">
                 </div>
@@ -39,7 +46,7 @@
 
         <section>
             <label>
-                <input type="checkbox" name="remember"> Ghi nhớ đăng nhập <!-- Thêm checkbox remember -->
+                <input type="checkbox" name="remember"> Ghi nhớ đăng nhập 
             </label>
         </section>
 

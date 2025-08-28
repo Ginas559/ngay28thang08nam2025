@@ -8,11 +8,11 @@
 </head>
 <body>
     <h1>Chào mừng User!</h1>
-    <p>Bạn đã đăng nhập với vai trò khác (roleid khác 1 hoặc 2).</p>
+    <p>Dăng nhập với vai trò khác (roleid 3).</p>
     <c:if test="${sessionScope.account != null}">
         <p>Chào ${sessionScope.account.fullName}!</p>
     </c:if>
-    <p><a href="${pageContext.request.contextPath}/login">Đăng nhập lại</a> | <a href="${pageContext.request.contextPath}/logout">Đăng xuất</a></p>
+    <p><a href="${pageContext.request.contextPath}/login.jsp">Đăng nhập lại</a> | <a href="${pageContext.request.contextPath}/logout.jsp">Đăng xuất</a></p>
     <%@ include file="topbar.jsp" %>
 </body>
 </html>
