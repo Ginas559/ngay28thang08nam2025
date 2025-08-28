@@ -28,7 +28,7 @@ public class DBConnection {
             Connection conn = new DBConnection().getConnection();
             // Tạo statement
             Statement stmt = conn.createStatement();
-            // Thêm dữ liệu vào bảng 'abc'
+            // Thêm dữ liệu vào bảng 'abc' (giữ nguyên như thầy)
             stmt.executeUpdate("INSERT INTO abc (id, username, email) "
                     + "VALUES (1, 'Trung', 'trung@example.com')");
             // Lấy dữ liệu từ bảng 'abc'
@@ -38,6 +38,23 @@ public class DBConnection {
                 System.out.println(rs.getInt("id") + " " + rs.getString("username") 
                         + " " + rs.getString("email"));
             }
+
+            // Thêm dữ liệu vào bảng login28_08 (dùng thông tin thầy)
+            stmt.executeUpdate("INSERT INTO login28_08 (email, username, fullname, password, avatar, roleid, phone, createdDate) "
+                    + "VALUES ('trungnh@gmail.com', 'trungnh', 'Nguyen Huu Trung', '123456', NULL, 1, '0908617108', '2025-08-28')");
+            stmt.executeUpdate("INSERT INTO login28_08 (email, username, fullname, password, avatar, roleid, phone, createdDate) "
+                    + "VALUES ('trungnh@gmail.com', 'trungnh2', 'Nguyen Huu Trung Assistant', '654321', NULL, 2, '0908617109', '2025-08-28')");
+
+            // Lấy dữ liệu từ bảng login28_08 để kiểm tra
+            rs = stmt.executeQuery("SELECT * FROM login28_08");
+            System.out.println("\nDữ liệu từ bảng login28_08:");
+            while (rs.next()) {
+                System.out.println(rs.getInt("id") + " " + rs.getString("username") 
+                        + " " + rs.getString("fullname") + " " + rs.getString("password")
+                        + " " + rs.getInt("roleid") + " " + rs.getString("phone")
+                        + " " + rs.getDate("createdDate"));
+            }
+
             conn.close(); // Đóng kết nối
         } catch (Exception e) {
             e.printStackTrace();

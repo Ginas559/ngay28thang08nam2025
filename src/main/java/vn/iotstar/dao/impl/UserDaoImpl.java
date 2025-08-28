@@ -15,7 +15,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public User get(String username) {
-        String sql = "SELECT * FROM [User] WHERE username = ?";
+        String sql = "SELECT * FROM login28_08 WHERE username = ?";
         try {
             conn = new DBConnection().getConnection();
             ps = conn.prepareStatement(sql);
