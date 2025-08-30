@@ -29,7 +29,8 @@ public class CategoryController extends HttpServlet {
                 list(req, resp);
                 break;
             case "/category/add":
-                req.getRequestDispatcher("/views/category-add.jsp").forward(req, resp);
+            	req.getRequestDispatcher("/category-add.jsp").forward(req, resp);
+
                 break;
             case "/category/edit":
                 editForm(req, resp);
