@@ -36,8 +36,79 @@ public class UserDaoImpl implements UserDao {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            return null;
         }
         return null;
+    }
+
+    // ========== Các hàm cho Register ==========
+    @Override
+    public void insert(User user) {
+    	String sql = "INSERT INTO login28_08 (email, username, fullname, password, avatar, roleid, phone, createdDate) "
+    	           + "VALUES (?, ?, ?, ?, ?, 3, ?, ?)";
+    	try {
+    	    conn = new DBConnection().getConnection();
+    	    ps = conn.prepareStatement(sql);
+    	    ps.setString(1, user.getEmail());
+    	    ps.setString(2, user.getUserName());
+    	    ps.setString(3, user.getFullName());
+    	    ps.setString(4, user.getPassWord());
+    	    ps.setString(5, user.getAvatar());  // có thể null
+    	    ps.setString(6, user.getPhone());
+    	    ps.setDate(7, new java.sql.Date(user.getCreatedDate().getTime()));
+    	    ps.executeUpdate();
+    	} catch (Exception e) {
+    	    e.printStackTrace();
+    	}
+    }
+
+    @Override
+    public boolean checkExistEmail(String email) {
+        String sql = "SELECT 1 FROM login28_08 WHERE email = ?";
+        try {
+            conn = new DBConnection().getConnection();
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, email);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                return true; // email đã tồn tại
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    @Override
+    public boolean checkExistUsername(String username) {
+        String sql = "SELECT 1 FROM login28_08 WHERE username = ?";
+        try {
+            conn = new DBConnection().getConnection();
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, username);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                return true; // username đã tồn tại
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    @Override
+    public boolean checkExistPhone(String phone) {
+        String sql = "SELECT 1 FROM login28_08 WHERE phone = ?";
+        try {
+            conn = new DBConnection().getConnection();
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, phone);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                return true; // phone đã tồn tại
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 }
