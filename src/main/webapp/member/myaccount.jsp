@@ -28,7 +28,7 @@
             <p><b>Ngày tạo:</b> ${sessionScope.account.createdDate}</p>
 
             <br>
-            <a href="${pageContext.request.contextPath}/logout.jsp">Đăng xuất</a>
+            <a href="${pageContext.request.contextPath}/logout">Đăng xuất</a>
         </c:otherwise>
     </c:choose>
 

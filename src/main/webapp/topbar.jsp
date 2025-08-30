@@ -28,7 +28,7 @@
                         <a href="${pageContext.request.contextPath }/member/myaccount.jsp">
                             ${sessionScope.account.fullName}
                         </a> |
-                        <a href="${pageContext.request.contextPath }/logout.jsp">Đăng xuất</a>
+                        <a href="${pageContext.request.contextPath }/logout">Đăng xuất</a>
                     </li>
                     <li><i class="search fa fa-search search-button"></i></li>
                 </ul>
