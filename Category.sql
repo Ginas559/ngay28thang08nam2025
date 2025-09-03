@@ -10,4 +10,8 @@ CREATE TABLE Category (
 -- Test chèn dữ liệu (thay 3 bằng id user thật trong bảng login28_08)
 INSERT INTO Category (cate_name, icons, user_id)
 VALUES (N'Thể thao', 'icon-sport', 3),
-       (N'Âm nhạc', 'icon-music', 3);
+       (N'Âm nhạc', 'icon-music', 3),
+	   (N'Thể thao', 'icon-sport', 2),
+       (N'Âm nhạc', 'icon-music', 2),
+       (N'Thể thao', 'icon-sport', 1),
+       (N'Âm nhạc', 'icon-music', 1);
